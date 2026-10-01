@@ -78,7 +78,7 @@ function Index() {
 
       <main id="start">
         <section className="relative bg-secondary/55">
-          <div className="mx-auto grid min-h-[calc(100vh-5rem)] max-w-7xl items-center gap-10 px-5 py-16 md:grid-cols-[1.1fr_.9fr] lg:px-8">
+          <div className="mx-auto grid min-h-[min(760px,calc(100vh-5rem))] max-w-7xl items-center gap-10 px-5 py-14 md:grid-cols-[1.1fr_.9fr] lg:px-8">
             <div className="max-w-2xl">
               <div className="mb-6 inline-flex items-center gap-2 text-sm font-semibold"><span className={`h-2.5 w-2.5 rounded-full ${status.open ? "bg-emerald-600" : "bg-primary"}`} />{status.open ? "Otwarte teraz" : "Zamknięte"}</div>
               <p className="mb-4 text-sm font-semibold uppercase tracking-[.2em] text-primary">Studio urody w Swarzędzu</p>
