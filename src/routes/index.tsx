@@ -5,12 +5,12 @@ import {
   MapPin, Menu, Phone, ShieldCheck, Sparkles, Star, X, WandSparkles,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import logoAsset from "@/assets/alternatywa-piekna-logo.png.asset.json";
+import logo from "@/assets/logo.png";
 
 const BOOKSY = "https://alternatywapiekna.booksy.com/h/";
 const TITLE = "Alternatywa Piękna Swarzędz | Makijaż permanentny brwi, stylizacja paznokci, pedicure";
 const DESCRIPTION = "Studio urody w Swarzędzu, Os. Raczyńskiego 5. Makijaż permanentny brwi, stylizacja paznokci metodą żelową, pedicure. 98% poleca. Umów wizytę online lub zadzwoń: 511 353 604.";
-const OG_IMAGE = "https://id-preview--a146f0a5-63a0-4876-b10c-250bacaa01bd.lovable.app/__l5e/assets-v1/480739a5-afaf-4892-a35a-64db36ffadf5/alternatywa-piekna-og.png";
+const OG_IMAGE = "/og-image.png";
 
 export const Route = createFileRoute("/")({
   head: () => ({
