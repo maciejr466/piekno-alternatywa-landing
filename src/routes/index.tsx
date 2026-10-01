@@ -5,12 +5,12 @@ import {
   MapPin, Menu, Phone, ShieldCheck, Sparkles, Star, X, WandSparkles,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import logoAsset from "@/assets/alternatywa-piekna-logo.png.asset.json";
+import logo from "@/assets/logo.png";
 
 const BOOKSY = "https://alternatywapiekna.booksy.com/h/";
 const TITLE = "Alternatywa Piękna Swarzędz | Makijaż permanentny brwi, stylizacja paznokci, pedicure";
 const DESCRIPTION = "Studio urody w Swarzędzu, Os. Raczyńskiego 5. Makijaż permanentny brwi, stylizacja paznokci metodą żelową, pedicure. 98% poleca. Umów wizytę online lub zadzwoń: 511 353 604.";
-const OG_IMAGE = "https://id-preview--a146f0a5-63a0-4876-b10c-250bacaa01bd.lovable.app/__l5e/assets-v1/480739a5-afaf-4892-a35a-64db36ffadf5/alternatywa-piekna-og.png";
+const OG_IMAGE = "/og-image.png";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -69,7 +69,7 @@ function Index() {
     <div className="min-h-screen overflow-x-hidden bg-background pb-16 text-foreground md:pb-0">
       <header className="sticky top-0 z-50 border-b border-border/70 bg-background/95 backdrop-blur">
         <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-5 lg:px-8">
-          <a href="#start" aria-label="Alternatywa Piękna – strona główna"><img src={logoAsset.url} alt="Alternatywa Piękna – logo" className="h-14 w-auto" /></a>
+          <a href="#start" aria-label="Alternatywa Piękna – strona główna"><img src={logo} alt="Alternatywa Piękna – logo" className="h-14 w-auto" /></a>
           <nav className="hidden items-center gap-7 md:flex" aria-label="Główna nawigacja">{nav.map(([label,id]) => <a key={id} href={`#${id}`} className="text-sm font-medium hover:text-primary">{label}</a>)}<BookButton>Umów wizytę</BookButton></nav>
           <Button variant="ghost" size="icon" className="md:hidden" onClick={() => setMenu(!menu)} aria-label={menu ? "Zamknij menu" : "Otwórz menu"}>{menu ? <X /> : <Menu />}</Button>
         </div>
@@ -86,7 +86,7 @@ function Index() {
               <p className="mt-6 max-w-xl text-base leading-8 text-muted-foreground sm:text-lg">Makijaż permanentny, stylizacja paznokci i pedicure w Swarzędzu. Kameralna przestrzeń, w której liczą się Twoje potrzeby i każdy detal.</p>
               <div className="mt-9 flex flex-col gap-3 sm:flex-row"><BookButton>Zarezerwuj w Booksy <ChevronRight /></BookButton><Button asChild size="lg" variant="outline" className="h-12 px-6"><a href="tel:511353604"><Phone /> Zadzwoń: 511 353 604</a></Button></div>
             </div>
-            <div className="flex justify-center md:justify-end"><div className="relative bg-card p-5 shadow-[0_24px_70px_color-mix(in_oklab,var(--foreground)_12%,transparent)]"><img src={logoAsset.url} alt="Alternatywa Piękna – logo" className="w-full max-w-[500px]" /><span className="absolute -bottom-3 -left-3 h-20 w-px bg-primary" /><span className="absolute -bottom-3 -left-3 h-px w-20 bg-primary" /></div></div>
+            <div className="flex justify-center md:justify-end"><div className="relative bg-card p-5 shadow-[0_24px_70px_color-mix(in_oklab,var(--foreground)_12%,transparent)]"><img src={logo} alt="Alternatywa Piękna – logo" className="w-full max-w-[500px]" /><span className="absolute -bottom-3 -left-3 h-20 w-px bg-primary" /><span className="absolute -bottom-3 -left-3 h-px w-20 bg-primary" /></div></div>
           </div>
         </section>
 
@@ -103,7 +103,7 @@ function Index() {
         <section id="kontakt" className="scroll-mt-20 px-5 py-24 lg:px-8"><div className="mx-auto max-w-7xl"><SectionTitle eyebrow="Kontakt" title="Do zobaczenia w studiu" text="Zarezerwuj dogodny termin online lub zadzwoń." /><div className="mt-12 grid overflow-hidden border border-border bg-card shadow-sm lg:grid-cols-2"><div className="p-7 sm:p-10"><ContactLine Icon={MapPin} title="Adres"><a href="https://www.google.com/maps/search/?api=1&query=Os.+Raczy%C5%84skiego+5%2C+Swarz%C4%99dz" target="_blank" rel="noopener noreferrer">Os. Raczyńskiego 5, Swarzędz</a></ContactLine><ContactLine Icon={Phone} title="Telefon"><a href="tel:511353604">511 353 604</a></ContactLine><ContactLine Icon={Instagram} title="Instagram"><a href="https://instagram.com/alternatywapiekna" target="_blank" rel="noopener noreferrer">@alternatywapiekna</a></ContactLine><div className="mt-8"><h3 className="mb-3 flex items-center gap-2 font-semibold"><Clock3 className="h-5 w-5 text-primary" /> Godziny otwarcia</h3><div className="space-y-1">{[1, 2, 3, 4, 5, 6, 0].map((idx) => { const day = days[idx] ?? ""; const closed = idx === 0 || idx === 6; return <div key={day} className={`flex justify-between border-b border-border px-2 py-2 text-sm ${status.day === idx ? "bg-secondary font-semibold" : ""}`}><span>{day}</span><span>{closed ? "zamknięte" : "07:00–18:00"}</span></div>})}</div></div><BookButton className="mt-8 w-full"><CalendarDays /> Umów wizytę online</BookButton></div><iframe title="Mapa dojazdu do Alternatywy Piękna" className="min-h-[430px] w-full border-0" loading="lazy" referrerPolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=Os.%20Raczy%C5%84skiego%205%2C%20Swarz%C4%99dz&output=embed" /></div></div></section>
       </main>
 
-      <footer className="border-t border-border bg-card px-5 py-12 lg:px-8"><div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-7 text-center md:flex-row md:text-left"><img src={logoAsset.url} alt="Alternatywa Piękna – logo" className="h-24 w-auto" /><div className="text-sm leading-7 text-muted-foreground"><p>Os. Raczyńskiego 5, Swarzędz</p><a href="tel:511353604">511 353 604</a><p>© 2026 Alternatywa Piękna</p></div><div className="flex gap-2"><Social href="https://instagram.com/alternatywapiekna" label="Instagram"><Instagram /></Social><Social href="https://www.facebook.com/alternatywapiekna" label="Facebook"><Facebook /></Social></div></div></footer>
+      <footer className="border-t border-border bg-card px-5 py-12 lg:px-8"><div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-7 text-center md:flex-row md:text-left"><img src={logo} alt="Alternatywa Piękna – logo" className="h-24 w-auto" /><div className="text-sm leading-7 text-muted-foreground"><p>Os. Raczyńskiego 5, Swarzędz</p><a href="tel:511353604">511 353 604</a><p>© 2026 Alternatywa Piękna</p></div><div className="flex gap-2"><Social href="https://instagram.com/alternatywapiekna" label="Instagram"><Instagram /></Social><Social href="https://www.facebook.com/alternatywapiekna" label="Facebook"><Facebook /></Social></div></div></footer>
       <a href="tel:511353604" className="fixed inset-x-0 bottom-0 z-50 flex h-16 items-center justify-center gap-2 bg-primary font-semibold text-primary-foreground shadow-lg md:hidden" aria-label="Zadzwoń do Alternatywy Piękna"><Phone /> Zadzwoń: 511 353 604</a>
     </div>
   );
